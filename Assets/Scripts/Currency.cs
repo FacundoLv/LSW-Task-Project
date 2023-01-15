@@ -1,5 +1,10 @@
 public class Currency
 {
+    public Currency(int amount)
+    {
+        Amount = amount;
+    }
+    
     public int Amount { get; private set; }
 
     public void Add(int amount)

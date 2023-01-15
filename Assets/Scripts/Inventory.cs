@@ -1,14 +1,22 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory
+public class Inventory : IEnumerable<Item>
 {
     private readonly Item[] _items;
 
-    public Inventory(Item[] itemList, int size)
+    public Inventory(Item[] items, int size)
     {
         _items = new Item[size];
-        itemList.CopyTo(_items, 0);
+        items.CopyTo(_items, 0);
+    }
+
+    public Inventory(InventoryData data)
+    {
+        _items = new Item[data.Size];
+        data.Items.CopyTo(_items, 0);
     }
 
     public void Add(Item item)
@@ -35,6 +43,16 @@ public class Inventory
         Debug.Log("Item not found in inventory.");
     }
 
+    public IEnumerator<Item> GetEnumerator()
+    {
+        for (var i = 0; i < _items.Length; i++) yield return _items[i];
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
     public bool HasInInventory(Item item)
     {
         return Array.Exists(_items, n => n.Equals(item));
@@ -44,4 +62,11 @@ public class Inventory
     {
         return Array.Exists(_items, n => n == null);
     }
+}
+
+[Serializable]
+public class InventoryData
+{
+    public Item[] Items;
+    public int Size;
 }

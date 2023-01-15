@@ -2,16 +2,22 @@
   {
     "Name": "Shirt",
     "Description": "Very nice!",
-    "Price": 123
+    "Slot": "Chest",
+    "Price": 123,
+    "Sprite": "ItemSprites/shirt_blue_0"
   },
   {
     "Name": "Pants",
     "Description": "Comfortable!",
-    "Price": 456
+    "Slot": "Legs",
+    "Price": 456,
+    "Sprite": "ItemSprites/pants_black_0"
   },
   {
     "Name": "Magic hat",
     "Description": "Infinite bunnies!",
-    "Price": 789
+    "Slot": "Head",
+    "Price": 789,
+    "Sprite": ""
   }
 ]

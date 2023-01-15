@@ -1,0 +1,19 @@
+﻿{
+  "Items": [
+    {
+      "Name": "Shirt",
+      "Description": "Very nice!",
+      "Slot": "Chest",
+      "Price": 123,
+      "Sprite": "Chest"
+    },
+    {
+      "Name": "Pants",
+      "Description": "Comfortable!",
+      "Slot": "Legs",
+      "Price": 456,
+      "Sprite": "Chest"
+    }
+  ],
+  "Size": 12
+}

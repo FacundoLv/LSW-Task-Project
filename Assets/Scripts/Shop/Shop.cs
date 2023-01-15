@@ -6,6 +6,8 @@ public class Shop : MonoBehaviour, IInteractable
 {
     public UnityEvent onFocused;
     public UnityEvent onUnfocused;
+
+    [SerializeField] private ShopUI _ui;
     
     private Inventory _shopInventory;
 
@@ -16,8 +18,8 @@ public class Shop : MonoBehaviour, IInteractable
     {
         var jsonFile = Resources.Load<TextAsset>("shopInventory");
 
-        var itemList = JsonConvert.DeserializeObject<Item[]>(jsonFile.text);
-        _shopInventory = new Inventory(itemList, 12);
+        var items = JsonConvert.DeserializeObject<Item[]>(jsonFile.text);
+        _shopInventory = new Inventory(items, 12);
     }
 
     public void BuyItem(Item item)
@@ -57,5 +59,8 @@ public class Shop : MonoBehaviour, IInteractable
 
         _playerCurrency = player.GetCurrency();
         _playerInventory = player.GetInventory();
+
+        _ui.Setup(_shopInventory, _playerInventory, _playerCurrency);
+        _ui.Open();
     }
 }
