@@ -1,8 +1,12 @@
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Shop : MonoBehaviour
+public class Shop : MonoBehaviour, IInteractable
 {
+    public UnityEvent onFocused;
+    public UnityEvent onUnfocused;
+    
     private Inventory _shopInventory;
 
     private Inventory _playerInventory;
@@ -34,5 +38,24 @@ public class Shop : MonoBehaviour
             _playerInventory.Remove(item);
             _shopInventory.Add(item);
         }
+    }
+
+    public void OnFocused()
+    {
+        onFocused?.Invoke();
+    }
+
+    public void OnUnfocused()
+    {
+        onUnfocused?.Invoke();
+    }
+
+    public void Interact<T>(T interactor) where T : MonoBehaviour, IInteractor
+    {
+        var player = interactor.GetComponent<PlayerController>();
+        if (player == null) return;
+
+        _playerCurrency = player.GetCurrency();
+        _playerInventory = player.GetInventory();
     }
 }

@@ -16,6 +16,17 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         HandleMoveInput();
+        HandleInteractInput();
+    }
+
+    public Currency GetCurrency()
+    {
+        return _model.Currency;
+    }
+    
+    public Inventory GetInventory()
+    {
+        return _model.Inventory;
     }
 
     private void HandleMoveInput()
@@ -28,5 +39,12 @@ public class PlayerController : MonoBehaviour
         if (moveDirection.sqrMagnitude > 1) moveDirection = moveDirection.normalized;
 
         _view.MoveTo(moveDirection);
+    }
+
+    private void HandleInteractInput()
+    {
+        if (!Input.GetKeyDown(KeyCode.E)) return;
+
+        _view.Interact();
     }
 }
