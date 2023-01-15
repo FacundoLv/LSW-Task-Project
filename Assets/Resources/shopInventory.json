@@ -1,0 +1,17 @@
+﻿[
+  {
+    "Name": "Shirt",
+    "Description": "Very nice!",
+    "Price": 123
+  },
+  {
+    "Name": "Pants",
+    "Description": "Comfortable!",
+    "Price": 456
+  },
+  {
+    "Name": "Magic hat",
+    "Description": "Infinite bunnies!",
+    "Price": 789
+  }
+]
