@@ -1,10 +1,10 @@
-using System;
+using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 
 public class ShopUI : MonoBehaviour
 {
-    [Header("Shop inventory")]
+    [Header("Shop inventory")] 
     [SerializeField] private GameObject _shopInventoryContainer;
     [SerializeField] private ItemRow _shopItemPrefab;
 
@@ -13,42 +13,102 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private ItemSlot _playerItemPrefab;
 
     [Header("Player currency")]
-    [SerializeField] private TextMeshProUGUI _playerCurrency;
+    [SerializeField] private TextMeshProUGUI _playerCurrencyDisplay;
+
+    private Inventory _shopInventory;
+
+    private Inventory _playerInventory;
+    private Currency _playerCurrency;
+
+    private CanvasGroup _canvasGroup;
+
+    private void Awake()
+    {
+        var jsonFile = Resources.Load<TextAsset>("shopInventory");
+
+        var items = JsonConvert.DeserializeObject<Item[]>(jsonFile.text);
+        _shopInventory = new Inventory(items, 12);
+
+        _canvasGroup = GetComponent<CanvasGroup>();
+    }
 
     public void Open()
     {
-        gameObject.SetActive(true);
+        _canvasGroup.alpha = 1;
+        _canvasGroup.interactable = true;
+        _canvasGroup.blocksRaycasts = true;
     }
 
     public void Close()
     {
-        gameObject.SetActive(false);
+        _canvasGroup.alpha = 0;
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
     }
 
-    public void Setup(Inventory shopInventory, Inventory playerInventory, Currency playerCurrency)
+    public void Setup(Inventory playerInventory, Currency playerCurrency)
     {
-        foreach (Transform child in _shopInventoryContainer.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        _playerInventory = playerInventory;
+        _playerCurrency = playerCurrency;
 
-        foreach (var item in shopInventory)
+        RefreshShopInventoryUI();
+        RefreshPlayerInventoryUI();
+        UpdatePlayerCurrency();
+    }
+
+    private void RefreshShopInventoryUI()
+    {
+        foreach (Transform child in _shopInventoryContainer.transform) Destroy(child.gameObject);
+
+        foreach (var item in _shopInventory)
         {
             if (item == null) continue;
             var newItem = Instantiate(_shopItemPrefab, _shopInventoryContainer.transform);
-            newItem.SetRow(item);
+            newItem.Init(item);
+            newItem.onItemClicked += BuyItem;
         }
-        
-        foreach (Transform child in _playerInventoryContainer.transform)
-        {
-            Destroy(child.gameObject);
-        }
+    }
 
-        foreach (var item in playerInventory)
+    private void RefreshPlayerInventoryUI()
+    {
+        foreach (Transform child in _playerInventoryContainer.transform) Destroy(child.gameObject);
+
+        foreach (var item in _playerInventory)
         {
             var newItem = Instantiate(_playerItemPrefab, _playerInventoryContainer.transform);
+            newItem.Init(item);
+            newItem.onItemClicked += SellItem;
         }
+    }
 
-        _playerCurrency.text = playerCurrency.Amount.ToString();
+    private void UpdatePlayerCurrency()
+    {
+        _playerCurrencyDisplay.text = _playerCurrency.Amount.ToString();
+    }
+
+    private void BuyItem(Item item)
+    {
+        if (!_playerCurrency.CanSpend(item.Price) || !_playerInventory.CanAddToInventory(item)) return;
+
+        _playerCurrency.Spend(item.Price);
+        _playerInventory.Add(item);
+        _shopInventory.Remove(item);
+        
+        RefreshShopInventoryUI();
+        RefreshPlayerInventoryUI();
+        UpdatePlayerCurrency();
+    }
+
+    private void SellItem(Item item)
+    {
+        if (!_playerInventory.HasInInventory(item)) return;
+
+        _playerCurrency.Add(item.Price);
+        _playerInventory.Remove(item);
+        _shopInventory.Add(item);
+        
+        RefreshShopInventoryUI();
+        RefreshPlayerInventoryUI();
+        UpdatePlayerCurrency();
     }
 }

@@ -5,14 +5,14 @@
       "Description": "Very nice!",
       "Slot": "Chest",
       "Price": 123,
-      "Sprite": "Chest"
+      "Sprite": "ItemSprites/shirt_blue_0"
     },
     {
       "Name": "Pants",
       "Description": "Comfortable!",
       "Slot": "Legs",
       "Price": 456,
-      "Sprite": "Chest"
+      "Sprite": "ItemSprites/pants_black_0"
     }
   ],
   "Size": 12

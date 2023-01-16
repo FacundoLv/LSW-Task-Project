@@ -35,7 +35,7 @@ public class Inventory : IEnumerable<Item>
     {
         if (HasInInventory(item))
         {
-            var index = Array.FindIndex(_items, n => n.Equals(item));
+            var index = Array.FindIndex(_items, n => n != null && n.Equals(item));
             _items[index] = null;
             return;
         }
@@ -55,7 +55,7 @@ public class Inventory : IEnumerable<Item>
 
     public bool HasInInventory(Item item)
     {
-        return Array.Exists(_items, n => n.Equals(item));
+        return Array.Exists(_items, n => n != null && n.Equals(item));
     }
 
     public bool CanAddToInventory(Item item)
