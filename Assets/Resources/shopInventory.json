@@ -1,23 +1,42 @@
 ﻿[
   {
-    "Name": "Shirt",
+    "Name": "Green Shirt",
     "Description": "Very nice!",
-    "Slot": "Chest",
-    "Price": 123,
-    "Sprite": "ItemSprites/shirt_blue_0"
+    "Price": 800,
+    "Type":  "Equipment",
+    "ItemSO": "ItemsSOs/Green Shirt",
+    "Sprite": "ItemSprites/shirt_green"
   },
   {
-    "Name": "Pants",
-    "Description": "Comfortable!",
-    "Slot": "Legs",
-    "Price": 456,
-    "Sprite": "ItemSprites/pants_black_0"
+    "Name": "Cyan Shirt",
+    "Description": "Very nice!",
+    "Price": 100,
+    "Type":  "Equipment",
+    "ItemSO": "ItemsSOs/Light Blue Shirt",
+    "Sprite": "ItemSprites/shirt_lightblue"
   },
   {
-    "Name": "Magic hat",
-    "Description": "Infinite bunnies!",
-    "Slot": "Head",
-    "Price": 789,
-    "Sprite": ""
+    "Name": "Brown pants",
+    "Description": "Comfortable",
+    "Price": 150,
+    "Type":  "Equipment",
+    "ItemSO": "ItemsSOs/Brown Pants",
+    "Sprite": "ItemSprites/pants_brown"
+  },
+  {
+    "Name": "Blue pants",
+    "Description": "Comfortable",
+    "Price": 150,
+    "Type":  "Equipment",
+    "ItemSO": "ItemsSOs/Blue Pants",
+    "Sprite": "ItemSprites/pants_blue"
+  },
+  {
+    "Name": "Shoes",
+    "Description": "Heavy duty",
+    "Price": 20,
+    "Type":  "Equipment",
+    "ItemSO": "ItemsSOs/Shoes",
+    "Sprite": "ItemSprites/shoes"
   }
 ]

@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -870,7 +870,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pants_darkblue_33: 1426639946
       pants_darkblue_9: 632475407
       pants_darkblue_23: 1813381443
       pants_darkblue_35: 2009525621
@@ -898,13 +897,14 @@ TextureImporter:
       pants_darkblue_12: 646179325
       pants_darkblue_14: -540414966
       pants_darkblue_17: 294797686
-      pants_darkblue_29: 549534830
-      pants_darkblue_8: -1437644341
-      pants_darkblue_20: 1186726276
-      pants_darkblue_11: -1736700281
-      pants_darkblue_2: -564658657
       pants_darkblue_22: -32230492
+      pants_darkblue_29: 549534830
+      pants_darkblue_20: 1186726276
+      pants_darkblue_8: -1437644341
+      pants_darkblue_2: -564658657
+      pants_darkblue_11: -1736700281
       pants_darkblue_3: 173281769
+      pants_darkblue_33: 1426639946
       pants_darkblue_0: -595902830
   spritePackingTag: 
   pSDRemoveMatte: 0

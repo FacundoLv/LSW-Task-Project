@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -875,7 +875,7 @@ TextureImporter:
       pants_maroon_1: 1801074021
       pants_maroon_20: 302149192
       pants_maroon_25: -1317071923
-      pants_maroon_5: 1112652566
+      pants_maroon_29: -345147217
       pants_maroon_33: 396648095
       pants_maroon_12: -601787078
       pants_maroon_34: 2074086285
@@ -902,8 +902,8 @@ TextureImporter:
       pants_maroon_13: -91929413
       pants_maroon_7: -349226242
       pants_maroon_22: -1861229291
+      pants_maroon_5: 1112652566
       pants_maroon_21: 1942674440
-      pants_maroon_29: -345147217
       pants_maroon_18: -1451206093
       pants_maroon_14: -472177984
   spritePackingTag: 

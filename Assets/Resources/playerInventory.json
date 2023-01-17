@@ -1,18 +1,38 @@
 ﻿{
-  "Items": [
+  "Equipped": [
     {
-      "Name": "Shirt",
-      "Description": "Very nice!",
-      "Slot": "Chest",
-      "Price": 123,
-      "Sprite": "ItemSprites/shirt_blue_0"
+      "Name": "Messy hair",
+      "Description": "Stylish!",
+      "Price": 0,
+      "Type": "Equipment",
+      "ItemSO": "ItemsSOs/Messy Hair",
+      "Sprite": "ItemSprites/hair_halfmessy_brown"
     },
     {
-      "Name": "Pants",
-      "Description": "Comfortable!",
-      "Slot": "Legs",
-      "Price": 456,
-      "Sprite": "ItemSprites/pants_black_0"
+      "Name": "White Shirt",
+      "Description": "Very nice!",
+      "Price": 100,
+      "Type": "Equipment",
+      "ItemSO": "ItemsSOs/White Shirt",
+      "Sprite": "ItemSprites/shirt_white"
+    },
+    {
+      "Name": "Black pants",
+      "Description": "Comfortable",
+      "Price": 150,
+      "Type": "Equipment",
+      "ItemSO": "ItemsSOs/Black Pants",
+      "Sprite": "ItemSprites/pants_black"
+    }
+  ],
+  "Items": [
+    {
+      "Name": "Shoes",
+      "Description": "Heavy duty",
+      "Price": 20,
+      "Type": "Equipment",
+      "ItemSO": "ItemsSOs/Shoes",
+      "Sprite": "ItemSprites/shoes"
     }
   ],
   "Size": 12

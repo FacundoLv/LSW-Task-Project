@@ -4,9 +4,17 @@ public class Item
 {
     public string Name;
     public string Description;
-    public Slot Slot;
     public int Price;
+    public ItemType Type;
+    public string ItemSO;
     public string Sprite;
+}
+
+[Serializable]
+public enum ItemType
+{
+    Equipment,
+    Consumable
 }
 
 [Serializable]
@@ -15,5 +23,5 @@ public enum Slot
     Head,
     Chest,
     Legs,
-    Shoes
+    Feet
 }

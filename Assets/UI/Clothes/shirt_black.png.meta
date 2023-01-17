@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -881,12 +881,12 @@ TextureImporter:
       shirt_black_17: -965493501
       shirt_black_7: 1062304960
       shirt_black_26: -269568846
+      shirt_black_27: -1162066733
       shirt_black_16: 1959193526
       shirt_black_22: -700431176
       shirt_black_20: 878611343
       shirt_black_35: -343632079
       shirt_black_1: 145068509
-      shirt_black_25: 1620954342
       shirt_black_2: -2139291371
       shirt_black_8: -2113501408
       shirt_black_30: -2073896574
@@ -901,10 +901,10 @@ TextureImporter:
       shirt_black_18: -241678509
       shirt_black_19: -342081016
       shirt_black_15: -815265501
-      shirt_black_31: -1760055152
-      shirt_black_27: -1162066733
-      shirt_black_0: 1713823435
       shirt_black_28: -1385741755
+      shirt_black_31: -1760055152
+      shirt_black_0: 1713823435
+      shirt_black_25: 1620954342
       shirt_black_24: -216936031
   spritePackingTag: 
   pSDRemoveMatte: 0

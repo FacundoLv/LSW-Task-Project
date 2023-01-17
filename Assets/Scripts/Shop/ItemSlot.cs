@@ -4,8 +4,12 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
 {
-    public event Action<Item> onItemClicked;
-    
+    public event Action<ItemSlot, Item> onItemClicked;
+
+    public bool IsEmpty => _item == null;
+
+    public Item Item => _item;
+
     [SerializeField] private Image _image;
 
     private Item _item;
@@ -20,10 +24,10 @@ public class ItemSlot : MonoBehaviour
 
     private void OnItemClicked()
     {
-        if (_item != null) onItemClicked?.Invoke(_item);
+        if (!IsEmpty) onItemClicked?.Invoke(this, _item);
     }
 
-    public void Init(Item item)
+    public void Set(Item item)
     {
         _item = item;
 
@@ -35,5 +39,6 @@ public class ItemSlot : MonoBehaviour
 
         _image.gameObject.SetActive(true);
         _image.sprite = Resources.Load<Sprite>(item.Sprite);
+        _image.preserveAspect = true;
     }
 }

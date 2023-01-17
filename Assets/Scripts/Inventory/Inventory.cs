@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Inventory : IEnumerable<Item>
 {
+    public event Action<Item> onItemAdded;
+    public event Action<Item> onItemRemoved;
+    
     private readonly Item[] _items;
 
     public Inventory(Item[] items, int size)
@@ -21,10 +24,11 @@ public class Inventory : IEnumerable<Item>
 
     public void Add(Item item)
     {
-        if (CanAddToInventory(item))
+        if (CanAdd())
         {
             var index = Array.FindIndex(_items, n => n == null);
             _items[index] = item;
+            onItemAdded?.Invoke(item);
             return;
         }
 
@@ -37,6 +41,7 @@ public class Inventory : IEnumerable<Item>
         {
             var index = Array.FindIndex(_items, n => n != null && n.Equals(item));
             _items[index] = null;
+            onItemRemoved?.Invoke(item);
             return;
         }
 
@@ -58,7 +63,7 @@ public class Inventory : IEnumerable<Item>
         return Array.Exists(_items, n => n != null && n.Equals(item));
     }
 
-    public bool CanAddToInventory(Item item)
+    public bool CanAdd()
     {
         return Array.Exists(_items, n => n == null);
     }
@@ -67,6 +72,7 @@ public class Inventory : IEnumerable<Item>
 [Serializable]
 public class InventoryData
 {
+    public Item[] Equipped;
     public Item[] Items;
     public int Size;
 }

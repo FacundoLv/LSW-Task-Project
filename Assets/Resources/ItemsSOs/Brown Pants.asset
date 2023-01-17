@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4a65fbff6b4c9f93caded913359254, type: 3}
+  m_Name: Brown Pants
+  m_EditorClassIdentifier: 
+  slot: 2
+  sprites:
+  - {fileID: 239049471, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -1866371096, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 855021155, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -1073267834, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -1856168810, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -1473101611, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -825209139, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -741564661, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -582276258, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -1129330666, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 12043491, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 1637670370, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 1366996391, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 57986263, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 485426985, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 623761067, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 1212119803, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 673777778, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -1856537126, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -573637152, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 654775129, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 2102924689, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 59227162, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -1343473527, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -578547826, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -1002844002, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -541478323, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -1134119247, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -397746844, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -422084506, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 1114493143, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 519986420, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 212312335, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: 1577819572, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -372486334, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}
+  - {fileID: -540784569, guid: 90ab25255dd9c204c9cab74915e67bf5, type: 3}

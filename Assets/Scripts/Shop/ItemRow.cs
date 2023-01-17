@@ -26,10 +26,11 @@ public class ItemRow : MonoBehaviour
         onItemClicked?.Invoke(_item);
     }
 
-    public void Init(Item item)
+    public void Set(Item item)
     {
         _item = item;
         _image.sprite = Resources.Load<Sprite>(item.Sprite);
+        _image.preserveAspect = true;
         _name.text = item.Name;
         _price.text = item.Price.ToString();
     }

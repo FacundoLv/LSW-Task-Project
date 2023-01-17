@@ -64,7 +64,7 @@ public class ShopUI : MonoBehaviour
         {
             if (item == null) continue;
             var newItem = Instantiate(_shopItemPrefab, _shopInventoryContainer.transform);
-            newItem.Init(item);
+            newItem.Set(item);
             newItem.onItemClicked += BuyItem;
         }
     }
@@ -76,7 +76,7 @@ public class ShopUI : MonoBehaviour
         foreach (var item in _playerInventory)
         {
             var newItem = Instantiate(_playerItemPrefab, _playerInventoryContainer.transform);
-            newItem.Init(item);
+            newItem.Set(item);
             newItem.onItemClicked += SellItem;
         }
     }
@@ -88,7 +88,7 @@ public class ShopUI : MonoBehaviour
 
     private void BuyItem(Item item)
     {
-        if (!_playerCurrency.CanSpend(item.Price) || !_playerInventory.CanAddToInventory(item)) return;
+        if (!_playerCurrency.CanSpend(item.Price) || !_playerInventory.CanAdd()) return;
 
         _playerCurrency.Spend(item.Price);
         _playerInventory.Add(item);
@@ -99,7 +99,7 @@ public class ShopUI : MonoBehaviour
         UpdatePlayerCurrency();
     }
 
-    private void SellItem(Item item)
+    private void SellItem(ItemSlot slot, Item item)
     {
         if (!_playerInventory.HasInInventory(item)) return;
 
